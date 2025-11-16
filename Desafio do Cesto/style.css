@@ -1,0 +1,226 @@
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a, #151515, #0f0f0f);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  background: #ff9800;
+  color: #000;
+  text-align: center;
+  padding: 14px 0;
+  box-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
+header h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+}
+header p {
+  font-size: 0.95rem;
+}
+
+/* MAIN */
+main.container {
+  padding-top: 18px;
+  padding-bottom: 24px;
+}
+
+/* FORM */
+#formJogo {
+  border: 2px solid #ff9800;
+  background: #1b1b1b !important;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* PERGUNTA */
+#perguntaBox {
+  max-width: 900px;
+  margin: 14px auto 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid #ff9800;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.25);
+}
+
+#textoPergunta {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* PLACAR */
+#placarConteudo {
+ display: inline-block;
+  background: #ffcc80;
+  color: #000;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #ff9800;
+  margin: 12px auto; /* centraliza horizontalmente e distancia vertical */
+}
+
+/* QUADRA */
+#quadra {
+  position: relative;
+  margin: 28px auto;
+  max-width: 900px;
+}
+
+/* imagem da quadra */
+.quadra-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid #ff9800;
+  border-radius: 10px;
+  opacity: 0.92;
+  z-index: 0;
+  position: relative;
+}
+
+/* CESTAS */
+.cestas {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 16px 0;
+  z-index: 10;
+  pointer-events: none; /* container não recebe clique */
+}
+
+.cesta {
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: auto; /* cada cesta recebe clique */
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.cesta:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(255,138,0,0.14);
+}
+.cesta img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.opcaoText {
+  margin-top: 8px;
+  color: #ffcc80;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(255,106,0,0.25);
+  font-size: 1rem;
+}
+
+/* BOLA */
+#bola {
+  width: 48px;
+  height: 48px;
+  background-image: url('./bola.png');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: left .55s ease, top .55s ease;
+  z-index: 40;
+  pointer-events: auto;
+  filter: drop-shadow(0 6px 12px rgba(255,106,0,0.35));
+}
+
+/* MENSAGEM */
+#mensagem {
+  margin-top: 12px;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+/* BOTÃO RESET */
+#resetBtn {
+  margin-top: 12px;
+  min-width: 220px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff6d00, #ffa000);
+  color: #fff;
+  box-shadow: 0 0 12px #ff6a00;
+  transition: 0.3s;
+}
+#resetBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px #ffa726;
+}
+
+/* FOOTER */
+footer {
+  background: #fff;
+  color: #222;
+  text-align: center;
+  padding: 12px 0;
+  margin-top: auto;
+  font-weight: 700;
+}
+
+/* CLASSE HIDDEN */
+.hidden {
+  display: none !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .cestas {
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+  }
+  .cesta {
+    width: 140px;
+  }
+  #textoPergunta {
+    font-size: 1.25rem;
+  }
+  #bola {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  #quadra {
+    max-width: 100%;
+  }
+  .cesta {
+    width: 120px;
+  }
+  #bola {
+    width: 36px;
+    height: 36px;
+  }
+}
